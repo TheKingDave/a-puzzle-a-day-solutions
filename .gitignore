@@ -1,4 +1,6 @@
 .DS_Store
+static/solutions/*
+!static/solutions/.gitkeep
 node_modules
 /build
 /.svelte-kit
