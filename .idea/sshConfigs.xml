@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="v3.thekingdave.com" id="36065744-ac06-44fd-83b0-dbb65656062d" port="22" nameFormat="DESCRIPTIVE" username="web" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
