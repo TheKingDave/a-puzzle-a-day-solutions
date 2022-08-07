@@ -34,6 +34,10 @@
         This page is in no way associated <a href="http://a-puzzle-a-day.com">a-puzzle-a-day</a> or <a
             href="https://www.dragonfjord.com/">DragonFjord</a>.
     </p>
+    
+    <p>
+        <a href="https://www.flaticon.com/free-icons/dragon" title="dragon icons">Dragon icons created by Freepik - Flaticon</a>
+    </p>
 </div>
 
 <style>

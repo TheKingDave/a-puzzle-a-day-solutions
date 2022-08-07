@@ -1,8 +1,8 @@
 const backgroundColor = '#8A8984';
 
-const labelToColour = {
+export const labelToColour = {
     U: '#7F1CC9',
-    L: '#984D11',
+    L: '#0F7F12',
     N: '#FFFD38',
     S: '#FC2028',
     P: '#FD8023',
@@ -11,10 +11,10 @@ const labelToColour = {
     Z: '#FC1681',
 }
 
-const createSvgElement = (elementName, additionalAttributes = {}): SVGElement => {
+const createSvgElement = (elementName: string, additionalAttributes: {[key: string]: string | number} = {}): SVGElement => {
     const element = document.createElementNS('http://www.w3.org/2000/svg', elementName)
     Object.entries(additionalAttributes).forEach(([name, value]) =>
-        element.setAttribute(name, value))
+        element.setAttribute(name, value.toString()))
     return element
 }
 

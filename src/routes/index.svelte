@@ -4,9 +4,7 @@
 	async function getSolution() {
 		const today = new Date();
 		const response = await fetch(`/solutions/${today.getMonth()+1}-${today.getDate()}.json`);
-		const solutions = await response.json();
-		console.log(solutions);
-		return solutions;
+		return await response.json();
 	}
 	const promise = getSolution();
 </script>
@@ -20,22 +18,13 @@
 
 {#await promise}
 	<p>Loading...</p>
-{:then solutions}
-	<h2>{solutions.day} {solutions.month} {solutions.count}</h2>
-	<Board solution={solutions.solutions[0]} month={solutions.month} day={solutions.day} />
+{:then {day, month, count, solutions}}
+	<Board solution={solutions[Math.floor(Math.random()*solutions.length)]} month={month} day={day} />
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
 	h1 {
 		width: 100%;
 	}
