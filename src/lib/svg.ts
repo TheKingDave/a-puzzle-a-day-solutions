@@ -1,14 +1,16 @@
 const backgroundColor = '#8A8984';
 
+const colorAlpha = '0.5';
+
 export const labelToColour = {
-    U: '#7F1CC9',
-    L: '#0F7F12',
-    N: '#FFFD38',
-    S: '#FC2028',
-    P: '#FD8023',
-    Y: '#29FD2F',
-    V: '#6783E3',
-    Z: '#FC1681',
+    U: `rgba(127,28,201,${colorAlpha})`,
+    L: `rgba(15,127,18,${colorAlpha})`,
+    N: `rgba(255,253,56,${colorAlpha})`,
+    S: `rgba(252,32,40,${colorAlpha})`,
+    P: `rgba(253,128,35,${colorAlpha})`,
+    Y: `rgba(41,253,47,${colorAlpha})`,
+    V: `rgba(103,131,227,${colorAlpha})`,
+    Z: `rgba(252,22,129,${colorAlpha})`,
 }
 
 const createSvgElement = (elementName: string, additionalAttributes: {[key: string]: string | number} = {}): SVGElement => {

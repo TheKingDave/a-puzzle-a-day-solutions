@@ -15,7 +15,7 @@
 
 <style>
 	main {
-		padding: 1rem;
+		padding: 0 1rem;
 		width: 100%;
 		max-width: 1024px;
 		margin: 0 auto;
@@ -26,6 +26,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	
+	footer p {
+		margin-block-start: 0;
+		margin-block-end: 0;
 	}
 
 	footer a {

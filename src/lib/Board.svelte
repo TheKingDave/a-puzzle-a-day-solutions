@@ -6,12 +6,12 @@
     export let day: number;
 </script>
 
-<div class="board">
+<div class="board" style="background-image: url('/images/wood.jpg');">
     {#each solution as char, i}
         {#if char === ' '}
-            <div class="text">{i < 12 ? month : day}</div>
+            <div class="block text">{i < 12 ? month : day}</div>
         {:else}
-            <div style="background-color: {labelToColour[char]}"></div>
+            <div class="block" style="background-color: {labelToColour[char]}"></div>
         {/if}
     {/each}
     <div class="placeholder top"></div>
@@ -20,14 +20,20 @@
 
 <style>
     .board {
-        aspect-ratio: 1;
-        border: 15px solid #774D2B;
+        aspect-ratio: 1 / 1;
+        /*border: 15px solid #774D2B;*/
+        padding: 3.5%;
         display: grid;
         grid-template: repeat(7, 1fr) / repeat(7, 1fr);
+        border-radius: 3.5%;
+    }
+    
+    .block {
+        border: 1px solid black;
     }
 
     .placeholder {
-        background-color: #774D2B;
+        /*background-color: #774D2B;*/
     }
 
     .placeholder.top {
@@ -41,7 +47,7 @@
     }
     
     .text {
-        background-color: white;
+        /*background-color: white;*/
         display: flex;
         justify-content: center;
         align-items: center;

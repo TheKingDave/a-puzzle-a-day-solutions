@@ -25,6 +25,12 @@
 {/await}
 
 <style>
+	:global(main) {
+		display: grid;
+		grid-template-rows: auto 1fr;
+		justify-items: center;
+	}
+	
 	h1 {
 		width: 100%;
 	}
