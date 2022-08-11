@@ -10,6 +10,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="v3 old">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/old.a-puzzle-a-day.solutions/public" local="$PROJECT_DIR$/build" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
   </component>
 </project>

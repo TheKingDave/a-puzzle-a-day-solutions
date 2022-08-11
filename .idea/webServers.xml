@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="c4c5ba7b-021b-40fe-91ae-3f09a80877ee" name="v3 old" url="https://a-puzzle-a-day.solutions/">
+        <fileTransfer accessType="SFTP" host="v3.thekingdave.com" port="22" sshConfigId="36065744-ac06-44fd-83b0-dbb65656062d" sshConfig="web@v3.thekingdave.com:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

@@ -27,8 +27,8 @@ body {
     grid-template:
             "h h h" 3em
             ". m ." 1fr
-            "f f f" 80px / 1fr minmax(0, 1024px) 1fr;
-    align-items: start;
+            "f f f" 60px / 1fr minmax(0, 1024px) 1fr;
+    align-items: stretch;
     justify-items: stretch;
 
     background-color: var(--primary-color);
