@@ -5,7 +5,7 @@
       <webServer id="1b93fc04-b392-4899-9d4a-86dfc52f3dbf" name="v3" url="https://a-puzzle-a-day.solutions/">
         <fileTransfer accessType="SFTP" host="v3.thekingdave.com" port="22" sshConfigId="36065744-ac06-44fd-83b0-dbb65656062d" sshConfig="web@v3.thekingdave.com:22 password">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+            <advancedOptions controlEncoding="utf8" dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>

@@ -46,6 +46,7 @@ header {
 
 main {
     grid-area: m;
+    max-width: 100vh;
 }
 
 footer {
@@ -100,10 +101,4 @@ button {
 
 button:focus:not(:focus-visible) {
     outline: none;
-}
-
-@media (min-width: 720px) {
-    h1 {
-        font-size: 2.4rem;
-    }
 }
