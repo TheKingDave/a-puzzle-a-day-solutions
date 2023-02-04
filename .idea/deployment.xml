@@ -6,14 +6,14 @@
       <paths name="v3">
         <serverdata>
           <mappings>
-            <mapping deploy="/a-puzzle-a-day.solutions/public" local="$PROJECT_DIR$/build" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="v3 old">
         <serverdata>
           <mappings>
-            <mapping deploy="/a-puzzle-a-day.solutions/public/old" local="$PROJECT_DIR$/build" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

@@ -15,6 +15,10 @@
 
 <style>
 	main {
+		display: flex;
+		justify-content: stretch;
+		align-items: stretch;
+		flex-direction: column;
 		padding: 0 1rem;
 		width: 100%;
 		max-width: 1024px;

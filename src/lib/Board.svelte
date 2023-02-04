@@ -1,80 +1,61 @@
 <script lang="ts">
-    import elementResizeDetectorMaker from 'element-resize-detector';
-    import {labelToColour} from "./svg.js";
-    import {afterUpdate, onMount} from 'svelte';
+    import {acrylicColors} from "./colors.js";
+    import {monthNames} from "$lib/months";
 
+    export let onBlockClick: (index: number) => void | undefined;
     export let solution: string;
-    export let month: string;
-    export let day: number;
-    export let maxWidth: number;
-
-    export let wrapper: HTMLElement;
-    export let board: HTMLElement;
-
-    const updateSize = () => {
-        const min = Math.min(wrapper.clientWidth, wrapper.clientHeight, maxWidth);
-        console.log(wrapper.clientWidth, wrapper.clientHeight, maxWidth, min);
-        board.style.width = `${min}px`;
-        board.style.height = `${min}px`;
-    }
-
-    onMount(() => {
-        const erd = elementResizeDetectorMaker({
-            strategy: "scroll"
-        });
-        erd.listenTo(wrapper, updateSize);
-    });
-
-    afterUpdate(() => {
-        updateSize();
-    })
 </script>
 
-<div class="center">
-    <div class="fix-padding">
-        <div class="board" bind:this={board} style="background-image: url('/images/wood.jpg');">
-            {#each solution as char, i}
-                {#if char === ' '}
-                    <div class="block text">{i < 12 ? month : day}</div>
-                {:else}
-                    <div class="block" style="background-color: {labelToColour[char]}"></div>
-                {/if}
-            {/each}
-            <div class="placeholder top"></div>
-            <div class="placeholder bottom"></div>
-        </div>
+<div class="board-container">
+    <div class="board">
+        {#each solution as char, index}
+            <div
+                    class="block"
+                    class:text={char === ' ' || char === 'X'}
+                    class:selected={char === 'X'}
+                    class:clickable={onBlockClick != null}
+                    style="background-color: {char === ' ' || char === 'X' ? null : acrylicColors[char]}"
+                    on:click={onBlockClick == null ? null : () => onBlockClick(index)}
+            >
+                {index < 12 ? monthNames[index] : index - 11}
+            </div>
+        {/each}
+        <div class="placeholder top"></div>
+        <div class="placeholder bottom"></div>
     </div>
 </div>
-<div class="wrapper" bind:this={wrapper}></div>
 
 <style>
-    .center {
+    .board-container {
         display: flex;
         justify-content: center;
-        grid-row: 2;
-        grid-column: 1;
-    }
-
-    .wrapper {
-        grid-row: 2;
-        grid-column: 1;
+        container-type: size;
+        container-name: board;
+        width: 100%;
+        height: 100%;
     }
 
     .board {
+        background-color: black;
         box-sizing: border-box;
-        aspect-ratio: 1 / 1;
+        width: 100cqmin;
+        height: 100cqmin;
         padding: 3.5%;
         display: grid;
         grid-template: repeat(7, 1fr) / repeat(7, 1fr);
-        background-color: #C8A16A;
-        background-size: cover;
         border-radius: 3.5%;
-        grid-gap: 1px;
     }
 
     .block {
-        /*border: 1px solid black;*/
-        box-shadow: 1px 1px 1px black, -1px 1px 1px black, 1px -1px 1px black, -1px -1px 1px black;
+        border: 2px solid transparent;
+        transition: border 250ms, background-color 500ms, color 500ms;
+
+        user-select: none;
+        color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 125%;
     }
 
     .placeholder.top {
@@ -88,10 +69,14 @@
     }
 
     .text {
-        /*background-color: white;*/
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 125%;
+        color: white;
+    }
+
+    .text.clickable {
+        cursor: pointer;
+    }
+
+    .selected {
+        border: 2px solid white;
     }
 </style>

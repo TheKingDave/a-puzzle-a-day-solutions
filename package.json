@@ -36,6 +36,7 @@
 		"@fontsource/fira-mono": "^4.5.0",
 		"@sveltejs/adapter-static": "^1.0.0-next.38",
 		"cookie": "^0.4.1",
-		"element-resize-detector": "^1.2.4"
+		"element-resize-detector": "^1.2.4",
+		"real-cancellable-promise": "^1.1.1"
 	}
 }
